@@ -14,7 +14,22 @@
   </div>
 
   <button type="button" class="btn btn-primary" 
-      (click)="adicionar()" [disabled]="nombre.length==0">Adicionar</button>
+      (click)="agregar()" [disabled]="nombre.length==0">Agregar</button>
+
+
+
+  <div class="row" style="margin-top:20px">
+    <div class="col-2" *ngFor="let trabajador of trabajadores">
+      <div class="card">
+          <img class="card-img-top" src="https://randomuser.me/api/portraits/lego/{{trabajador.id}}.jpg" alt="Card image cap">
+          <div class="card-body">
+            {{trabajador.nombre}}
+          </div>
+        </div>
+    </div>
+    
+  </div>
+
 
 </div>
 
