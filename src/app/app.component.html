@@ -5,10 +5,9 @@
 
   <div class="form-group">
       <label>Nombre</label>
-      <input type="text" class="form-control" 
-          (input)="alterarNome($event)"
-          [value]="nombre"
-          >
+      <input type="text" class="form-control" [(ngModel)]="nombre">
+      <!--(input)="nombre= $event.target.value"
+          [value]="nombre"-->
   </div>
 
   <button type="button" class="btn btn-primary" 
