@@ -10,7 +10,8 @@ export class TrabajadorFormComponent {
   ultimoId = 0;
   nombre = 'Luis Aros';
   agregado = false;
-  @Output('outputTrabajadorAgregado') trabajadorAgregado = new EventEmitter();//Evento
+  // Evento
+  @Output('outputTrabajadorAgregado') trabajadorAgregado = new EventEmitter();
 
   public agregar(){
     console.log(`Agregando ${this.nombre}`);
@@ -21,8 +22,9 @@ export class TrabajadorFormComponent {
       id: ++this.ultimoId,
       nombre: this.nombre
     }
-    
-    this.trabajadorAgregado.emit(trabajador);//Enviar el valor de la variable.
+
+    // Enviar el valor de la variable.
+    this.trabajadorAgregado.emit(trabajador);
 
   }
 
