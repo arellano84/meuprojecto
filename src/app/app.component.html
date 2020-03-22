@@ -1,22 +1,6 @@
 <div class="container">
 
-  <div class="alert alert-success" role="alert" 
-  [hidden]="!agregado">
-  <!--*ngIf="agregado" -->
-
-      Funcionário adicionado: <strong>{{nombre}}</strong>
-  </div>
-
-  <div class="form-group">
-      <label>Nombre</label>
-      <input type="text" class="form-control" [(ngModel)]="nombre"
-      (focus)="agregado=false">
-  </div>
-
-  <button type="button" class="btn btn-primary" 
-      (click)="agregar()" [disabled]="nombre.length==0">Agregar</button>
-
-
+  <app-trabajador-form (trabajadorAgregado)="alAgregar($event)"></app-trabajador-form>
 
   <div class="row" style="margin-top:20px">
     <div class="col-2" *ngFor="let trab of trabajadores">
@@ -24,10 +8,7 @@
     </div>
   </div>
 
-
 </div>
-
-
 
 <!--app-bem-vindo></app-bem-vindo-->
 

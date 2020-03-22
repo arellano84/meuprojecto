@@ -1,0 +1,17 @@
+
+  <div class="alert alert-success" role="alert" 
+  [hidden]="!agregado">
+  <!--*ngIf="agregado" -->
+
+      Trabajador agregado: <strong>{{nombre}}</strong>
+  </div>
+
+  <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="nombre"
+      (focus)="agregado=false">
+  </div>
+
+  <button type="button" class="btn btn-primary" 
+      (click)="agregar()" [disabled]="nombre.length==0">Agregar</button>
+

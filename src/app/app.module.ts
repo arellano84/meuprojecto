@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.component';
+import { TrabajadorFormComponent } from './trabajador-form/trabajador-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BemVindoComponent,
-    TrabajadorCardComponent
+    TrabajadorCardComponent,
+    TrabajadorFormComponent
   ],
   imports: [
     BrowserModule,
