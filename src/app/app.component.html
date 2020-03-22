@@ -1,6 +1,6 @@
 <div class="container">
 
-  <app-trabajador-form (trabajadorAgregado)="alAgregar($event)"></app-trabajador-form>
+  <app-trabajador-form (outputTrabajadorAgregado)="alAgregar($event)"></app-trabajador-form>
 
   <div class="row" style="margin-top:20px">
     <div class="col-2" *ngFor="let trab of trabajadores">

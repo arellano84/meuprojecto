@@ -10,7 +10,7 @@ export class TrabajadorFormComponent {
   ultimoId = 0;
   nombre = 'Luis Aros';
   agregado = false;
-  @Output() trabajadorAgregado = new EventEmitter();//Evento
+  @Output('outputTrabajadorAgregado') trabajadorAgregado = new EventEmitter();//Evento
 
   public agregar(){
     console.log(`Agregando ${this.nombre}`);
