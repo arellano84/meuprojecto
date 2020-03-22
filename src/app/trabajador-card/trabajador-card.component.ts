@@ -23,4 +23,13 @@ export class TrabajadorCardComponent{
       'border-width.px': this.trabajador.id
     };
   }
+
+  /*getClasesCss() {
+    return ['badge', 'badge-default'];
+  }*/
+
+  isAdmin() {
+    return this.trabajador.nombre.startsWith('T');
+  }
+
 }
