@@ -17,15 +17,11 @@ export class TrabajadorFormComponent {
     this.agregado = true;
     console.log(this.agregado);
 
-    /*this.trabajadores.push({
-        id: ++this.ultimoId,
-        nombre: this.nombre
-    });*/
     const trabajador = {
       id: ++this.ultimoId,
       nombre: this.nombre
     }
-
+    
     this.trabajadorAgregado.emit(trabajador);//Enviar el valor de la variable.
 
   }
