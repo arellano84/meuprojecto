@@ -9,7 +9,8 @@
   <div class="form-group">
       <label>Nombre</label>
       <input type="text" class="form-control" [(ngModel)]="nombre"
-      (focus)="agregado=false" appCampoColorido [color]="'red'">
+      (focus)="agregado=false" appCampoColorido [color]="'red'"
+      #campoCol="campoColoreado">
 
       <!--label>Apellido</label>
       <input type="text" class="form-control" [appCampoColorido]="'red'"-->
@@ -17,3 +18,6 @@
 
   <button type="button" class="btn btn-primary"
       (click)="agregar()" [disabled]="nombre.length==0">Agregar</button>
+
+  <button class="btn btn-info" (click)="campoCol.colorear()">Colorear</button>
+  <button class="btn btn-info" (click)="campoCol.descolorear()">Descolorear</button>
