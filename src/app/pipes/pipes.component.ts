@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent {
 
-  nome = 'Thiago Faria';
+  nome = 'Luis Aros';
   dataAniversario = new Date(1990, 3, 19);
   preco = 12855.32;
   troco = 0.57392;
