@@ -11,6 +11,7 @@ export class FormulariosComponent{
   guardar(usuarioForm: NgForm) {
     console.log('Salvando...');
     console.log(usuarioForm);
+    console.log(usuarioForm.value.nombre);// acceder al valor del campo nombre
   }
 
 }

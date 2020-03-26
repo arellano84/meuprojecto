@@ -6,17 +6,17 @@
   <form #usuarioForm="ngForm" (ngSubmit)="guardar(usuarioForm)">
     <div class="form-group">
       <label class="form-control-label">Nombre</label>
-      <input type="text" class="form-control">
+      <input type="text" name="nombre" class="form-control" ngModel>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
-      <input type="text" class="form-control">
+      <input type="text" name="mail" class="form-control" ngModel>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">Profesión</label>
-      <select class="form-control">
+      <select name="profesion" class="form-control" ngModel>
         <option value="">Selecione</option>
         <option>Ingeniero</option>
         <option>Dentista</option>
