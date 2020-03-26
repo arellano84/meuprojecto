@@ -8,6 +8,7 @@ import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.component';
 import { TrabajadorFormComponent } from './trabajador-form/trabajador-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
     BemVindoComponent,
     TrabajadorCardComponent,
     TrabajadorFormComponent,
-    CampoColoridoDirective
+    CampoColoridoDirective,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
