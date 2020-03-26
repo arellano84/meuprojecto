@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.component';
 import { TrabajadorFormComponent } from './trabajador-form/trabajador-form.component';
+import { CampoColoridoDirective } from './campo-colorido.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BemVindoComponent,
     TrabajadorCardComponent,
-    TrabajadorFormComponent
+    TrabajadorFormComponent,
+    CampoColoridoDirective
   ],
   imports: [
     BrowserModule,
