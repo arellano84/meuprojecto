@@ -3,7 +3,7 @@
 
     <h1>PIPES:</h1>
     <h6>{{ nome | uppercase }}</h6>
-    <h6>{{ dataAniversario | date }}</h6>
-    <h6>{{ preco | number }}</h6>
-    <h6>{{ troco | currency }}</h6>
+    <h6>{{ dataAniversario | date:'dd/MMM/yy' }}</h6>
+    <h6>{{ preco | number:'1.2-2' }}</h6>
+    <h6>{{ troco | currency:'MXM':'$' }}</h6>
   </div>
