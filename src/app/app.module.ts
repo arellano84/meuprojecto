@@ -9,6 +9,7 @@ import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.compo
 import { TrabajadorFormComponent } from './trabajador-form/trabajador-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
+import { FormulariosComponent } from './formularios/formularios.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PipesComponent } from './pipes/pipes.component';
     TrabajadorCardComponent,
     TrabajadorFormComponent,
     CampoColoridoDirective,
-    PipesComponent
+    PipesComponent,
+    FormulariosComponent
   ],
   imports: [
     BrowserModule,

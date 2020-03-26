@@ -1,16 +1,14 @@
+<!--app-bem-vindo></app-bem-vindo-->
+
 <div class="container">
-
   <app-trabajador-form (outputTrabajadorAgregado)="alAgregar($event)"></app-trabajador-form>
-
   <div class="row" style="margin-top:20px">
     <div class="col-2" *ngFor="let trab of trabajadores">
       <app-trabajador-card [inputTrabajador]="trab"></app-trabajador-card>
     </div>
   </div>
-
-  <app-pipes></app-pipes>
-
 </div>
 
-<!--app-bem-vindo></app-bem-vindo-->
+<app-pipes></app-pipes>
 
+<app-formularios></app-formularios>
