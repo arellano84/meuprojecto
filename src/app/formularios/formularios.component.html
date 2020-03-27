@@ -18,8 +18,8 @@
       <label class="form-control-label">Profesión</label>
       <select name="profesion" class="form-control" ngModel>
         <option value="">Selecione</option>
-        <option>Ingeniero</option>
-        <option>Dentista</option>
+        <!--option *ngFor="let profesion of profesiones" value="{{profesion}}">{{profesion}}</option-->
+        <option *ngFor="let profesion of profesiones" [value]="profesion">{{profesion}}</option>
       </select>
     </div>
 

@@ -6,7 +6,13 @@ import { NgForm } from '@angular/forms';
   templateUrl: './formularios.component.html',
   styleUrls: ['./formularios.component.css']
 })
-export class FormulariosComponent{
+export class FormulariosComponent {
+
+  profesiones = [
+    'Programador',
+    'Empresario',
+    'Otra'
+  ];
 
   guardar(usuarioForm: NgForm) {
     console.log('Salvando...');
