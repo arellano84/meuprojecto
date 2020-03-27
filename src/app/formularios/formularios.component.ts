@@ -38,6 +38,11 @@ export class FormulariosComponent {
 */
     console.log(usuarioForm.value);
     console.log(this.cliente);
+
+    // this.cliente = new Cliente();
+
+    usuarioForm.reset(); // Reset todo
+    usuarioForm.reset({profesion: 'Seleccione'}); // Reset inicializando campos.
   }
 
 }

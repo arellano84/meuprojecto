@@ -53,7 +53,7 @@
       <label class="form-control-label">Profesión</label>
       <select name="profesion" class="form-control"
       [(ngModel)]="cliente.profesion" required #instProfesion="ngModel">
-        <option value="">Selecione</option>
+        <option value="Seleccione">Seleccione</option>
         <!--option *ngFor="let profesion of profesiones" value="{{profesion}}">{{profesion}}</option-->
         <option *ngFor="let profesion of profesiones" [value]="profesion">{{profesion}}</option>
       </select>
