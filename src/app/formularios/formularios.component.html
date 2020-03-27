@@ -3,10 +3,15 @@
   <h1>FORMULARIOS:</h1>
 
   <h6>{{cliente | json}}</h6>
-  <h6>Valido: {{usuarioForm.valid}}</h6>
+  <h6>Valido: {{formularioUsuario.valid}}</h6>
+  <h6>Invalido: {{formularioUsuario.invalid}}</h6>
+
+  <div *ngIf="formularioUsuario.invalid" class="alert alert-danger">
+    Ingrese todos los campos correctamente.
+  </div>
 
   <!--form ngNoForm-->
-  <form #usuarioForm="ngForm" (ngSubmit)="guardar(usuarioForm)">
+  <form autocomplete="off" #formularioUsuario="ngForm" (ngSubmit)="guardar(formularioUsuario)">
     <div class="form-group">
       <label class="form-control-label">Nombre</label>
       <input type="text" name="nombre" class="form-control"
