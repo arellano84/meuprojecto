@@ -2,21 +2,23 @@
 
   <h1>FORMULARIOS:</h1>
 
+  {{cliente | json}}
+
   <!--form ngNoForm-->
   <form #usuarioForm="ngForm" (ngSubmit)="guardar(usuarioForm)">
     <div class="form-group">
       <label class="form-control-label">Nombre</label>
-      <input type="text" name="nombre" class="form-control" ngModel>
+      <input type="text" name="nombre" class="form-control" [(ngModel)]="cliente.nombre">
     </div>
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
-      <input type="text" name="mail" class="form-control" ngModel>
+      <input type="text" name="email" class="form-control" [(ngModel)]="cliente.email">
     </div>
 
     <div class="form-group">
       <label class="form-control-label">Profesión</label>
-      <select name="profesion" class="form-control" [ngModel]="profesionDefalt">
+      <select name="profesion" class="form-control" [(ngModel)]="cliente.profesion">
         <option value="">Selecione</option>
         <!--option *ngFor="let profesion of profesiones" value="{{profesion}}">{{profesion}}</option-->
         <option *ngFor="let profesion of profesiones" [value]="profesion">{{profesion}}</option>
