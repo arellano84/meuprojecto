@@ -6,7 +6,7 @@
   <h6>Valido: {{instFormUsuario.valid}}</h6>
   <h6>Invalido: {{instFormUsuario.invalid}}</h6>
 
-  <div *ngIf="instFormUsuario.invalid" class="alert alert-danger">
+  <div *ngIf="instFormUsuario.invalid && instFormUsuario.dirty" class="alert alert-danger">
     Ingrese todos los campos correctamente.
   </div>
 
@@ -18,8 +18,12 @@
       <input type="text" name="nombre" class="form-control"
       [(ngModel)]="cliente.nombre" required minlength="3" #instNombre="ngModel">
 
-      <div *ngIf="instNombre.hasError('required')">Ingrese un nombre</div>
-      <div *ngIf="instNombre.hasError('minlength')">El nombre debe ser completo</div>
+        <!--Touched: {{ instNombre.touched }} Tiene el foco-->
+        <!--Pristine: {{ instNombre.pristine }} En versión original, que esta intacto-->
+        <!--Dirty: {{ instNombre.dirty }} Que esta alterado-->
+
+      <div *ngIf="instNombre.hasError('required') && instNombre.dirty">Ingrese un nombre</div>
+      <div *ngIf="instNombre.hasError('minlength') && instNombre.dirty">El nombre debe ser completo</div>
     </div>
 
     <div class="form-group">
@@ -27,7 +31,7 @@
       <input type="text" name="email" class="form-control"
       [(ngModel)]="cliente.email" required email #instEmail="ngModel">
 
-      <div *ngIf="instEmail.invalid">El email debe tener formato correcto</div>
+      <div *ngIf="instEmail.invalid  && instEmail.touched">El email debe tener formato correcto</div>
     </div>
 
     <div class="form-group">
@@ -39,10 +43,10 @@
         <option *ngFor="let profesion of profesiones" [value]="profesion">{{profesion}}</option>
       </select>
 
-      <div *ngIf="instProfesion.hasError('required')">Seleccione un profesion</div>
+      <div *ngIf="instProfesion.hasError('required')  && instProfesion.touched">Seleccione un profesion</div>
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.valid">Guardar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!instFormUsuario.valid">Guardar</button>
   </form>
 
 </div>
