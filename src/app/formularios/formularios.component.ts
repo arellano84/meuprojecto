@@ -13,11 +13,14 @@ export class FormulariosComponent {
     'Empresario',
     'Otra'
   ];
+  profesionDefalt = 'Programador';
 
   guardar(usuarioForm: NgForm) {
     console.log('Salvando...');
     console.log(usuarioForm);
     console.log(usuarioForm.value.nombre);// acceder al valor del campo nombre
+
+    console.log(usuarioForm.value.profesion);
   }
 
 }
