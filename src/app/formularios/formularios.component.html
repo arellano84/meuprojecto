@@ -13,7 +13,10 @@
 
   <!--form ngNoForm-->
   <form autocomplete="off" #instFormUsuario="ngForm" (ngSubmit)="guardar(instFormUsuario)">
-    <div class="form-group">
+
+    <div class="form-group"
+      [class.has-danger]="instNombre.invalid && instNombre.touched">
+
       <label class="form-control-label">Nombre</label>
       <input type="text" name="nombre" class="form-control"
       [(ngModel)]="cliente.nombre" required minlength="3" #instNombre="ngModel">
@@ -22,19 +25,31 @@
         <!--Pristine: {{ instNombre.pristine }} En versión original, que esta intacto-->
         <!--Dirty: {{ instNombre.dirty }} Que esta alterado-->
 
-      <div *ngIf="instNombre.hasError('required') && instNombre.dirty">Ingrese un nombre</div>
-      <div *ngIf="instNombre.hasError('minlength') && instNombre.dirty">El nombre debe ser completo</div>
+      <div *ngIf="instNombre.hasError('required') && instNombre.touched"
+      class="form-control-feedback">
+            Ingrese un nombre
+      </div>
+      <div *ngIf="instNombre.hasError('minlength') && instNombre.touched">
+        <small class="text-danger">
+            El nombre debe ser ingresado correctamente
+        </small>
+      </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group"
+      [class.has-danger]="instEmail.invalid && instEmail.touched">
+
       <label class="form-control-label">E-mail</label>
       <input type="text" name="email" class="form-control"
       [(ngModel)]="cliente.email" required email #instEmail="ngModel">
 
-      <div *ngIf="instEmail.invalid  && instEmail.touched">El email debe tener formato correcto</div>
+      <div *ngIf="instEmail.invalid  && instEmail.touched"
+      class="form-control-feedback">El e-mail debe tener formato correcto</div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group"
+      [class.has-danger]="instProfesion.invalid && instProfesion.touched">
+
       <label class="form-control-label">Profesión</label>
       <select name="profesion" class="form-control"
       [(ngModel)]="cliente.profesion" required #instProfesion="ngModel">
@@ -43,7 +58,8 @@
         <option *ngFor="let profesion of profesiones" [value]="profesion">{{profesion}}</option>
       </select>
 
-      <div *ngIf="instProfesion.hasError('required')  && instProfesion.touched">Seleccione un profesion</div>
+      <div *ngIf="instProfesion.hasError('required')  && instProfesion.touched"
+      class="form-control-feedback">Seleccione un profesion</div>
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!instFormUsuario.valid">Guardar</button>
