@@ -3,36 +3,43 @@
   <h1>FORMULARIOS:</h1>
 
   <h6>{{cliente | json}}</h6>
-  <h6>Valido: {{formularioUsuario.valid}}</h6>
-  <h6>Invalido: {{formularioUsuario.invalid}}</h6>
+  <h6>Valido: {{instFormUsuario.valid}}</h6>
+  <h6>Invalido: {{instFormUsuario.invalid}}</h6>
 
-  <div *ngIf="formularioUsuario.invalid" class="alert alert-danger">
+  <div *ngIf="instFormUsuario.invalid" class="alert alert-danger">
     Ingrese todos los campos correctamente.
   </div>
 
 
   <!--form ngNoForm-->
-  <form autocomplete="off" #formularioUsuario="ngForm" (ngSubmit)="guardar(formularioUsuario)">
+  <form autocomplete="off" #instFormUsuario="ngForm" (ngSubmit)="guardar(instFormUsuario)">
     <div class="form-group">
       <label class="form-control-label">Nombre</label>
       <input type="text" name="nombre" class="form-control"
-      [(ngModel)]="cliente.nombre" required minlength="3">
+      [(ngModel)]="cliente.nombre" required minlength="3" #instNombre="ngModel">
+
+      <div *ngIf="instNombre.hasError('required')">Ingrese un nombre</div>
+      <div *ngIf="instNombre.hasError('minlength')">El nombre debe ser completo</div>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
       <input type="text" name="email" class="form-control"
-      [(ngModel)]="cliente.email" required email>
+      [(ngModel)]="cliente.email" required email #instEmail="ngModel">
+
+      <div *ngIf="instEmail.invalid">El email debe tener formato correcto</div>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">Profesión</label>
       <select name="profesion" class="form-control"
-      [(ngModel)]="cliente.profesion" required>
+      [(ngModel)]="cliente.profesion" required #instProfesion="ngModel">
         <option value="">Selecione</option>
         <!--option *ngFor="let profesion of profesiones" value="{{profesion}}">{{profesion}}</option-->
         <option *ngFor="let profesion of profesiones" [value]="profesion">{{profesion}}</option>
       </select>
+
+      <div *ngIf="instProfesion.hasError('required')">Seleccione un profesion</div>
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.valid">Guardar</button>
