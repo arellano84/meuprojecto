@@ -1,3 +1,4 @@
+import { TrabajadorService } from './../funcionario.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -13,7 +14,17 @@ export class TrabajadorFormComponent {
   // Evento
   @Output('outputTrabajadorAgregado') trabajadorAgregado = new EventEmitter();
 
-  public agregar(){
+  trabajadorService: TrabajadorService;
+  constructor() {
+    this.trabajadorService = new TrabajadorService();
+  }
+  public agregarConServicio(nombre: string) {
+    console.log(nombre);
+    this.trabajadorService.agregar(nombre);
+  }
+
+  public agregar() {
+
     console.log(`Agregando ${this.nombre}`);
     this.agregado = true;
     console.log(this.agregado);
@@ -21,11 +32,10 @@ export class TrabajadorFormComponent {
     const trabajador = {
       id: ++this.ultimoId,
       nombre: this.nombre
-    }
+    };
 
     // Enviar el valor de la variable.
     this.trabajadorAgregado.emit(trabajador);
-
   }
 
 }
