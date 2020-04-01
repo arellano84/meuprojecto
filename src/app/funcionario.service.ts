@@ -3,7 +3,7 @@ export class TrabajadorService {
   trabajadores = [{id: 1, nombre: 'Luis'}];
   ultimoId = 1;
 
-  agregar(nombre) {
+  agregar(nombre: string) {
     const trabajador = {
       id: ++this.ultimoId,
       nombre: nombre
@@ -15,5 +15,14 @@ export class TrabajadorService {
 
   consultar() {
     return this.trabajadores;
+  }
+}
+
+/*
+15.4. Configurando o injetor com provider por classe
+*/
+export class TrabajadorExtService extends TrabajadorService {
+  agregar(nombre: string) {
+    super.agregar(nombre.concat('...'));
   }
 }
