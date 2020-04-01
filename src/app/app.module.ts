@@ -1,4 +1,3 @@
-import { TrabajadorModule } from './trabajador/trabajador.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -9,6 +8,9 @@ import { AppComponent } from './app.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosComponent } from './formularios/formularios.component';
+
+import { TrabajadorModule } from './trabajador/trabajador.module';
+import { PeticionesModule } from './peticiones/peticiones.module';
 
 import { LogService } from './log.service';
 
@@ -37,7 +39,8 @@ import { LogService } from './log.service';
     // BotonesModule, Se puede exportas desde en NavegacionModule.
     NavegacionModule,
 
-    TrabajadorModule
+    TrabajadorModule,
+    PeticionesModule
   ],
   providers: [
     LogService,
