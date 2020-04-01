@@ -1,3 +1,4 @@
+import { TrabajadorModule } from './trabajador/trabajador.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -6,9 +7,6 @@ import { NavegacionModule } from './navegacion/navegacion.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
-import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.component';
-import { TrabajadorFormComponent } from './trabajador-form/trabajador-form.component';
-import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 
@@ -27,9 +25,9 @@ import { LogService } from './log.service';
   declarations: [
     AppComponent,
     BemVindoComponent,
-    TrabajadorCardComponent,
-    TrabajadorFormComponent,
-    CampoColoridoDirective,
+    // TrabajadorCardComponent,
+    // TrabajadorFormComponent,
+    //CampoColoridoDirective,
     PipesComponent,
     FormulariosComponent
   ],
@@ -38,7 +36,9 @@ import { LogService } from './log.service';
     AppRoutingModule,
     FormsModule,
     // BotonesModule, Se puede exportas desde en NavegacionModule.
-    NavegacionModule
+    NavegacionModule,
+
+    TrabajadorModule
   ],
   providers: [
     LogService,

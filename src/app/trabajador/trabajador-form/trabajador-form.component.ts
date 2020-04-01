@@ -1,6 +1,8 @@
-import { LogService } from './../log.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { TrabajadorService } from './../funcionario.service';
+
+import { LogService } from './../../log.service';
+import { TrabajadorService } from './../../funcionario.service';
+
 
 @Component({
   selector: 'app-trabajador-form',
