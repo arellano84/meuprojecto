@@ -1,7 +1,16 @@
+import { Injectable } from '@angular/core';
+
+import { LogService } from './log.service';
+
+@Injectable() // 15.7. Injetando serviços dentro de serviços e o decorador @Injectable
 export class TrabajadorService {
 
   trabajadores = [{id: 1, nombre: 'Luis'}];
   ultimoId = 1;
+
+  constructor(private logService: LogService) {
+
+  }
 
   agregar(nombre: string) {
     const trabajador = {
@@ -10,7 +19,7 @@ export class TrabajadorService {
     };
     this.trabajadores.push(trabajador);
 
-    console.log(JSON.stringify(this.trabajadores));
+    this.logService.log(JSON.stringify(this.trabajadores));
   }
 
   consultar() {
@@ -21,7 +30,7 @@ export class TrabajadorService {
 /*
 15.4. Configurando o injetor com provider por classe
 */
-export class TrabajadorExtService extends TrabajadorService {
+/*export class TrabajadorExtService extends TrabajadorService {
 
   constructor(private numeroCaracteres: number) {
     super();
@@ -31,3 +40,4 @@ export class TrabajadorExtService extends TrabajadorService {
     super.agregar(nombre.substr(0, this.numeroCaracteres) + '...');
   }
 }
+*/

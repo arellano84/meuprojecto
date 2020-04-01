@@ -12,7 +12,7 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 
-import { TrabajadorService, TrabajadorExtService } from './funcionario.service';
+import { TrabajadorService } from './funcionario.service';
 import { LogService } from './log.service';
 
 /*
@@ -42,10 +42,10 @@ const crearTrabajadorService = () => {
   ],
   providers: [
     LogService,
-    {provide: 'LogPrefijo', useValue: 'LOG'},
-    // TrabajadorService Directamente sin cambiar de nombre.
+    {provide: 'LogPrefijo', useValue: 'LOG'}, //se inyecta con @Inject
+    TrabajadorService // Directamente sin utiliza la otra clase.
     // {provide: TrabajadorService, useClass: TrabajadorExtService}
-    {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
+    // {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
 
   ], // Pasamos clase a injectar en constructor.
   bootstrap: [AppComponent]
