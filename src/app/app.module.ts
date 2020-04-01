@@ -10,7 +10,6 @@ import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 
-import { TrabajadorService } from './funcionario.service';
 import { LogService } from './log.service';
 
 /*
@@ -27,7 +26,7 @@ import { LogService } from './log.service';
     BemVindoComponent,
     // TrabajadorCardComponent,
     // TrabajadorFormComponent,
-    //CampoColoridoDirective,
+    // CampoColoridoDirective,
     PipesComponent,
     FormulariosComponent
   ],
@@ -42,8 +41,8 @@ import { LogService } from './log.service';
   ],
   providers: [
     LogService,
-    {provide: 'LogPrefijo', useValue: 'LOG'}, // se inyecta con @Inject
-    TrabajadorService // Directamente sin utiliza la otra clase.
+     {provide: 'LogPrefijo', useValue: 'LOG'}, // se inyecta con @Inject
+    // TrabajadorService // Directamente sin utiliza la otra clase.
     // {provide: TrabajadorService, useClass: TrabajadorExtService}
     // {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
 

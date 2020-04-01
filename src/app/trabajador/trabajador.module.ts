@@ -1,15 +1,13 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { FormulariosComponent } from './../formularios/formularios.component';
-import { PipesComponent } from './../pipes/pipes.component';
 import { CampoColoridoDirective } from './../campo-colorido.directive';
 
 import { TrabajadorFormComponent } from './trabajador-form/trabajador-form.component';
 import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.component';
+
+import { TrabajadorService } from './funcionario.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +22,12 @@ import { TrabajadorCardComponent } from './trabajador-card/trabajador-card.compo
   exports: [
     TrabajadorCardComponent,
     TrabajadorFormComponent
-  ]
+  ],
+  providers: [
+    TrabajadorService // Directamente sin utiliza la otra clase.
+    // {provide: TrabajadorService, useClass: TrabajadorExtService}
+    // {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
+
+  ], //
 })
 export class TrabajadorModule { }

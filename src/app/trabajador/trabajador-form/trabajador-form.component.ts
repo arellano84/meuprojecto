@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { LogService } from './../../log.service';
-import { TrabajadorService } from './../../funcionario.service';
+import { TrabajadorService } from '../funcionario.service';
 
 
 @Component({

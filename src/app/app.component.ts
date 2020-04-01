@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TrabajadorService } from './funcionario.service';
+import { TrabajadorService } from './trabajador/funcionario.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
