@@ -14,6 +14,13 @@ import { FormulariosComponent } from './formularios/formularios.component';
 
 import { TrabajadorService, TrabajadorExtService } from './funcionario.service';
 
+/*
+15.5. Configurando o injetor com provider por fábrica
+*/
+const crearTrabajadorService = () => {
+  return new TrabajadorExtService(2);
+};
+
 
 @NgModule({
   declarations: [
@@ -34,7 +41,8 @@ import { TrabajadorService, TrabajadorExtService } from './funcionario.service';
   ],
   providers: [
     // TrabajadorService Directamente sin cambiar de nombre.
-    {provide: TrabajadorService, useClass: TrabajadorExtService}
+    // {provide: TrabajadorService, useClass: TrabajadorExtService}
+    {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
   ], // Pasamos clase a injectar en constructor.
   bootstrap: [AppComponent]
 })

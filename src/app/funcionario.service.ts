@@ -22,7 +22,12 @@ export class TrabajadorService {
 15.4. Configurando o injetor com provider por classe
 */
 export class TrabajadorExtService extends TrabajadorService {
+
+  constructor(private numeroCaracteres: number) {
+    super();
+  }
+
   agregar(nombre: string) {
-    super.agregar(nombre.concat('...'));
+    super.agregar(nombre.substr(0, this.numeroCaracteres) + '...');
   }
 }
