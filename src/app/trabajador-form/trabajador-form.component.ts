@@ -1,3 +1,4 @@
+import { LogService } from './../log.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { TrabajadorService } from './../funcionario.service';
 
@@ -18,13 +19,17 @@ export class TrabajadorFormComponent {
 
 
   // trabajadorService: TrabajadorService; Cambiamos a injection como parametro en constructor.
-  constructor(private trabajadorService: TrabajadorService) {
+  constructor(
+    private trabajadorService: TrabajadorService,
+    private logService: LogService) {
     // this.trabajadorService = new TrabajadorService(); Cambiamos a injection como parametro en constructor.
   }
 
   public agregarConServicio(nombre: string) {
-    console.log(nombre);
+    this.logService.log(`agregarConServicio: ${nombre}`);
+
     this.trabajadorService.agregar(nombre);
+
   }
 
 

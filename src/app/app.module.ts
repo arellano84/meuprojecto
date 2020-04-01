@@ -13,6 +13,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 
 import { TrabajadorService, TrabajadorExtService } from './funcionario.service';
+import { LogService } from './log.service';
 
 /*
 15.5. Configurando o injetor com provider por fábrica
@@ -40,9 +41,12 @@ const crearTrabajadorService = () => {
     NavegacionModule
   ],
   providers: [
+    LogService,
+    {provide: 'LogPrefijo', useValue: 'LOG'},
     // TrabajadorService Directamente sin cambiar de nombre.
     // {provide: TrabajadorService, useClass: TrabajadorExtService}
     {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
+
   ], // Pasamos clase a injectar en constructor.
   bootstrap: [AppComponent]
 })
