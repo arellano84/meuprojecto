@@ -14,14 +14,21 @@ export class TrabajadorFormComponent {
   // Evento
   @Output('outputTrabajadorAgregado') trabajadorAgregado = new EventEmitter();
 
-  trabajadorService: TrabajadorService;
-  constructor() {
-    this.trabajadorService = new TrabajadorService();
+
+
+
+  // trabajadorService: TrabajadorService; Cambiamos a injection como parametro en constructor.
+  constructor(private trabajadorService: TrabajadorService) {
+    // this.trabajadorService = new TrabajadorService(); Cambiamos a injection como parametro en constructor.
   }
+
   public agregarConServicio(nombre: string) {
     console.log(nombre);
     this.trabajadorService.agregar(nombre);
   }
+
+
+
 
   public agregar() {
 

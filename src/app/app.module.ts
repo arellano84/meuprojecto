@@ -12,6 +12,8 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 
+import { TrabajadorService } from './funcionario.service';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { FormulariosComponent } from './formularios/formularios.component';
     // BotonesModule, Se puede exportas desde en NavegacionModule.
     NavegacionModule
   ],
-  providers: [],
+  providers: [TrabajadorService], // Pasamos clase a injectar en constructor.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

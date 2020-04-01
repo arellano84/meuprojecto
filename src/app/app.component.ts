@@ -9,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
 
   trabajadores = [];
-  trabajadorService: TrabajadorService;
+  // trabajadorService: TrabajadorService; Cambiamos a injection como parametro en constructor.
 
-  constructor() {
-    this.trabajadorService = new TrabajadorService();
+  constructor(private trabajadorService: TrabajadorService) {
+    // this.trabajadorService = new TrabajadorService(); Cambiamos a injection como parametro en constructor.
   }
   ngOnInit() {
     this.trabajadores = this.trabajadorService.consultar();
