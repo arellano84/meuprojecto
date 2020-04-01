@@ -18,9 +18,9 @@ import { LogService } from './log.service';
 /*
 15.5. Configurando o injetor com provider por fábrica
 */
-const crearTrabajadorService = () => {
+/*const crearTrabajadorService = () => {
   return new TrabajadorExtService(2);
-};
+};*/
 
 
 @NgModule({
@@ -42,7 +42,7 @@ const crearTrabajadorService = () => {
   ],
   providers: [
     LogService,
-    {provide: 'LogPrefijo', useValue: 'LOG'}, //se inyecta con @Inject
+    {provide: 'LogPrefijo', useValue: 'LOG'}, // se inyecta con @Inject
     TrabajadorService // Directamente sin utiliza la otra clase.
     // {provide: TrabajadorService, useClass: TrabajadorExtService}
     // {provide: TrabajadorService, useFactory: crearTrabajadorService} // Utiliza funcion que provee instancia.
