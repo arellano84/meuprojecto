@@ -7,7 +7,8 @@ import { TrabajadorService } from '../funcionario.service';
 @Component({
   selector: 'app-trabajador-form',
   templateUrl: './trabajador-form.component.html',
-  styleUrls: ['./trabajador-form.component.css']
+  styleUrls: ['./trabajador-form.component.css'],
+  //providers: [TrabajadorService] // Se genera una nueva instancia (Injector Hijo)
 })
 export class TrabajadorFormComponent {
 
