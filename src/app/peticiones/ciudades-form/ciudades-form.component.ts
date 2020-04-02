@@ -9,7 +9,7 @@ import { CiudadService } from './../ciudad.service';
 export class CiudadesFormComponent implements OnInit {
 
   ciudades = [
-    //{ id: 1, nombre: 'Uberlândia' }
+    // {id: 1, nombre: 'Uberlândia' }
   ];
 
   constructor(private ciudadService: CiudadService) {}
