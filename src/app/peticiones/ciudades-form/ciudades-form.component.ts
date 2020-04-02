@@ -48,6 +48,14 @@ export class CiudadesFormComponent implements OnInit {
 
   atualizar(ciudad: any) {
     alert(JSON.stringify(ciudad));
+
+    console.log('-Component- Actualizando Ciudad...');
+    this.ciudadService.actualizar(ciudad)
+    .then(() => {
+      this.consultar();
+      alert(`Ciudad Actualizada ${ciudad.nombre}.`);
+    });
+
   }
 
 }
