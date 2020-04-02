@@ -13,16 +13,8 @@
       "id": 3
     },
     {
-      "nombre": "Rio de Janeiro",
-      "id": 4
-    },
-    {
       "nombre": "Madrid",
       "id": 5
-    },
-    {
-      "nombre": "Toledo",
-      "id": 6
     }
   ]
 }

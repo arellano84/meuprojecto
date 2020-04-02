@@ -33,12 +33,17 @@ export class CiudadesFormComponent implements OnInit {
     this.ciudadService.agregrar({nombre})
     .then(ciudad => {
       this.consultar();
-      alert(`Ciudad Agregada ${ciudad.nombre} con código ${ciudad.id}`);
+      alert(`Ciudad Agregada ${ciudad.nombre} con código ${ciudad.id}.`);
     });
   }
 
-  excluir(id: number) {
-    alert(id);
+  eliminar(id: number) {
+    console.log('-Component- Eliminando Ciudad...');
+    this.ciudadService.eliminar(id)
+    .then(() => {
+      this.consultar();
+      alert(`Ciudad Eliminada ${id}.`);
+    });
   }
 
   atualizar(ciudad: any) {

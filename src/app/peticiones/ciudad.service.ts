@@ -21,5 +21,14 @@ export class CiudadService {
       .toPromise();
   }
 
+  eliminar(id: number): Promise<any> {
+    return this.httpClient.delete(`http://localhost:3000/ciudades/${id}`)
+    .toPromise()
+    .then(() => null);
+  }
+
+  atualizar(ciudad: any) {
+
+  }
 
 }
