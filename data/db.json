@@ -1,19 +1,19 @@
 {
-  "cidades": [
+  "ciudades": [
     {
-      "nome": "UDIA",
+      "nombre": "UDIA",
       "id": 1
     },
     {
-      "nome": "São Paulo",
+      "nombre": "São Paulo",
       "id": 2
     },
     {
-      "nome": "Fortaleza",
+      "nombre": "Fortaleza",
       "id": 3
     },
     {
-      "nome": "Rio de Janeiro",
+      "nombre": "Rio de Janeiro",
       "id": 4
     }
   ]

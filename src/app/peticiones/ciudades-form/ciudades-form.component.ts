@@ -1,18 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { CiudadService } from './../ciudad.service';
 
 @Component({
   selector: 'app-ciudades-form',
   templateUrl: './ciudades-form.component.html',
   styleUrls: ['./ciudades-form.component.css']
 })
-export class CiudadesFormComponent {
+export class CiudadesFormComponent implements OnInit {
 
-  cidades = [
-    { id: 1, nome: 'Uberlândia' },
-    { id: 2, nome: 'São Paulo' },
-    { id: 3, nome: 'Florianópolis' },
-    { id: 4, nome: 'Curitiba' }
+  ciudades = [
+    // { id: 1, nome: 'Uberlândia' }
   ];
+
+  constructor(private ciudadService: CiudadService) {}
+
+  ngOnInit() {
+    console.log('-Component- Consultado Ciudades...');
+    this.ciudadService.consultar()
+    .then(ciudades => {
+        this.ciudades = ciudades;
+        console.log(this.ciudades);
+        console.log(this.ciudades[0].nombre);
+    });
+  }
 
   adicionar(nome: string) {
     alert(nome);
@@ -22,8 +32,8 @@ export class CiudadesFormComponent {
     alert(id);
   }
 
-  atualizar(cidade: any) {
-    alert(JSON.stringify(cidade));
+  atualizar(ciudad: any) {
+    alert(JSON.stringify(ciudad));
   }
 
 }

@@ -6,11 +6,11 @@
 
   <div class="form-group">
     <label>Nombre</label>
-    <input type="text" class="form-control" #nome>
+    <input type="text" class="form-control" #nombre>
   </div>
 
   <button type="button" class="btn btn-primary"
-    (click)="adicionar(nome.value); nome.value = ''">Adicionar</button>
+    (click)="adicionar(nombre.value); nombre.value = ''">Adicionar</button>
 
   <table class="table" style="margin-top: 20px">
     <thead>
@@ -21,20 +21,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cidade of cidades">
-        <td>{{ cidade.id }}</td>
+      <tr *ngFor="let ciudad of ciudades">
+        <td>{{ ciudad.id }}</td>
         <td>
           <div class="input-group">
-            <input type="text" class="form-control" [(ngModel)]="cidade.nome">
+            <input type="text" class="form-control" [(ngModel)]="ciudad.nombre">
             <span class="input-group-btn">
               <button class="btn btn-primary"
-                (click)="atualizar(cidade)">Atualizar</button>
+                (click)="atualizar(ciudad)">Atualizar</button>
             </span>
           </div>
         </td>
         <td>
           <button class="btn btn-danger"
-            (click)="excluir(cidade.id)">Excluir</button>
+            (click)="excluir(ciudad.id)">Excluir</button>
         </td>
       </tr>
     </tbody>
