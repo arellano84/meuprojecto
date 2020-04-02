@@ -9,7 +9,7 @@ import { CiudadService } from './../ciudad.service';
 export class CiudadesFormComponent implements OnInit {
 
   ciudades = [
-    // { id: 1, nome: 'Uberlândia' }
+    //{ id: 1, nombre: 'Uberlândia' }
   ];
 
   constructor(private ciudadService: CiudadService) {}
@@ -25,6 +25,12 @@ export class CiudadesFormComponent implements OnInit {
         this.ciudades = ciudades;
         console.log(this.ciudades);
         console.log(this.ciudades[0].nombre);
+      })
+      .catch(error => {
+        alert(error);
+        this.ciudades = [
+          { id: 1, nombre: 'Uberlândia' }
+        ];
       });
   }
 
@@ -54,6 +60,9 @@ export class CiudadesFormComponent implements OnInit {
     .then(() => {
       this.consultar();
       alert(`Ciudad Actualizada ${ciudad.nombre}.`);
+    })
+    .catch(error => {
+      alert(error);
     });
 
   }

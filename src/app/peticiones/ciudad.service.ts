@@ -12,7 +12,11 @@ export class CiudadService {
     console.log('-Servicio- Consultado Ciudades...');
     return this.httpClient
       .get('http://localhost:3000/ciudades')
-      .toPromise();
+      .toPromise()
+      .catch(error => {
+        console.log('-Servicio- consultar error...' + error);
+        return Promise.reject(`Error al consultar las ciudades`);
+    });
   }
 
   agregrar(ciudad: any): Promise<any> {
@@ -29,7 +33,11 @@ export class CiudadService {
 
   actualizar(ciudad: any): Promise<any> {
     return this.httpClient.put(`http://localhost:3000/ciudades/${ciudad.id}`, ciudad)
-    .toPromise();
+    .toPromise()
+    .catch(error => {
+        console.log('-Servicio- actualizar error...' + error);
+        return Promise.reject(`Error al actualizar la ciudad ${ciudad.id}`);
+    });
     // .then(response => response.json());
   }
 
