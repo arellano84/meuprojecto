@@ -10,10 +10,16 @@ export class CiudadService {
 
   consultar(): Promise<any> {
     console.log('-Servicio- Consultado Ciudades...');
-    return this
-      .httpClient
+    return this.httpClient
       .get('http://localhost:3000/ciudades')
       .toPromise();
   }
+
+  agregrar(ciudad: any): Promise<any> {
+    return this.httpClient
+      .post('http://localhost:3000/ciudades', ciudad)
+      .toPromise();
+  }
+
 
 }

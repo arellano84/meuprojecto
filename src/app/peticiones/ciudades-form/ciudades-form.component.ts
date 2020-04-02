@@ -15,17 +15,26 @@ export class CiudadesFormComponent implements OnInit {
   constructor(private ciudadService: CiudadService) {}
 
   ngOnInit() {
+    this.consultar();
+  }
+
+  private consultar() {
     console.log('-Component- Consultado Ciudades...');
     this.ciudadService.consultar()
-    .then(ciudades => {
+      .then(ciudades => {
         this.ciudades = ciudades;
         console.log(this.ciudades);
         console.log(this.ciudades[0].nombre);
-    });
+      });
   }
 
-  adicionar(nome: string) {
-    alert(nome);
+  agregrar(nombre: string) {
+    console.log('-Component- Agregando Ciudad...');
+    this.ciudadService.agregrar({nombre})
+    .then(ciudad => {
+      this.consultar();
+      alert(`Ciudad Agregada ${ciudad.nombre} con código ${ciudad.id}`);
+    });
   }
 
   excluir(id: number) {
